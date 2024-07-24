@@ -35,6 +35,13 @@ export namespace Components {
          */
         "value": any;
     }
+    interface HsRadioButton {
+        "checked": any;
+        "value": any;
+    }
+    interface HsRadioButtonGroup {
+        "name": any;
+    }
     interface HsRadioGroup {
         /**
           * Unique name to group these options under. Child radio inputs must feature the same `name` attribute value.
@@ -53,7 +60,7 @@ export namespace Components {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap": 'large' | 'small';
+        "gap": 'large' | 'small' | 'none';
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
@@ -79,6 +86,10 @@ export namespace Components {
 export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLHsButtonElement;
+}
+export interface HsRadioButtonGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLHsRadioButtonGroupElement;
 }
 export interface HsTabCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -114,6 +125,18 @@ declare global {
     var HTMLHsRadioElement: {
         prototype: HTMLHsRadioElement;
         new (): HTMLHsRadioElement;
+    };
+    interface HTMLHsRadioButtonElement extends Components.HsRadioButton, HTMLStencilElement {
+    }
+    var HTMLHsRadioButtonElement: {
+        prototype: HTMLHsRadioButtonElement;
+        new (): HTMLHsRadioButtonElement;
+    };
+    interface HTMLHsRadioButtonGroupElement extends Components.HsRadioButtonGroup, HTMLStencilElement {
+    }
+    var HTMLHsRadioButtonGroupElement: {
+        prototype: HTMLHsRadioButtonGroupElement;
+        new (): HTMLHsRadioButtonGroupElement;
     };
     interface HTMLHsRadioGroupElement extends Components.HsRadioGroup, HTMLStencilElement {
     }
@@ -163,6 +186,8 @@ declare global {
         "hs-grid-column": HTMLHsGridColumnElement;
         "hs-header": HTMLHsHeaderElement;
         "hs-radio": HTMLHsRadioElement;
+        "hs-radio-button": HTMLHsRadioButtonElement;
+        "hs-radio-button-group": HTMLHsRadioButtonGroupElement;
         "hs-radio-group": HTMLHsRadioGroupElement;
         "hs-stack": HTMLHsStackElement;
         "hs-tab": HTMLHsTabElement;
@@ -203,6 +228,14 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface HsRadioButton {
+        "checked"?: any;
+        "value"?: any;
+    }
+    interface HsRadioButtonGroup {
+        "name"?: any;
+        "onValueChange"?: (event: HsRadioButtonGroupCustomEvent<any>) => void;
+    }
     interface HsRadioGroup {
         /**
           * Unique name to group these options under. Child radio inputs must feature the same `name` attribute value.
@@ -221,7 +254,7 @@ declare namespace LocalJSX {
         /**
           * The `gap` property sets the spacing in between elements, and has no effect in the leading or trailing element.
          */
-        "gap"?: 'large' | 'small';
+        "gap"?: 'large' | 'small' | 'none';
         /**
           * The `orientation` property sets the direction for the flow, either vertical or horizontal.
          */
@@ -248,6 +281,8 @@ declare namespace LocalJSX {
         "hs-grid-column": HsGridColumn;
         "hs-header": HsHeader;
         "hs-radio": HsRadio;
+        "hs-radio-button": HsRadioButton;
+        "hs-radio-button-group": HsRadioButtonGroup;
         "hs-radio-group": HsRadioGroup;
         "hs-stack": HsStack;
         "hs-tab": HsTab;
@@ -266,6 +301,8 @@ declare module "@stencil/core" {
             "hs-grid-column": LocalJSX.HsGridColumn & JSXBase.HTMLAttributes<HTMLHsGridColumnElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-radio": LocalJSX.HsRadio & JSXBase.HTMLAttributes<HTMLHsRadioElement>;
+            "hs-radio-button": LocalJSX.HsRadioButton & JSXBase.HTMLAttributes<HTMLHsRadioButtonElement>;
+            "hs-radio-button-group": LocalJSX.HsRadioButtonGroup & JSXBase.HTMLAttributes<HTMLHsRadioButtonGroupElement>;
             "hs-radio-group": LocalJSX.HsRadioGroup & JSXBase.HTMLAttributes<HTMLHsRadioGroupElement>;
             "hs-stack": LocalJSX.HsStack & JSXBase.HTMLAttributes<HTMLHsStackElement>;
             "hs-tab": LocalJSX.HsTab & JSXBase.HTMLAttributes<HTMLHsTabElement>;
