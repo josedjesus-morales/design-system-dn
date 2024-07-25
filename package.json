@@ -60,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deeleman/design-system-boilerplate.git"
+    "url": "git+https://github.com/josedjesus-morales/design-system-dn.git"
   },
   "author": "Jesus Morales",
   "license": "MIT"
