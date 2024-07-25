@@ -9,7 +9,8 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
     '@storybook/addon-interactions',
-    '@storybook/addon-links'
+    '@storybook/addon-links',
+    '@storybook/addon-themes'
   ],
   core: {
     builder: {

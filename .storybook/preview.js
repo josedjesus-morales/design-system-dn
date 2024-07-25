@@ -5,6 +5,7 @@ import { fn } from '@storybook/test';
 defineCustomElements();
 
 export const parameters = {
+  //TODO: click function
   actions: { onClick: fn() },
   controls: {
     matchers: {
