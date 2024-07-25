@@ -1,14 +1,13 @@
-
 export default {
   title: 'Components/Stack',
   // Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls#annotation
   argTypes: {
     orientation: { control: 'radio', options: ['vertical', 'horizontal'] },
     gap: { control: 'radio', options: ['large', 'small'] },
-  }
+  },
 };
 
-const Template = (args) => `
+const Template = args => `
   <style>
     .stack-item { display: inline-block; width: 150px; height: 50px; }
     .stack-item:nth-child(even) { background-color: brown; }

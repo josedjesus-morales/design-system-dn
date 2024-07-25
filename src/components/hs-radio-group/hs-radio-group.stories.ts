@@ -2,7 +2,7 @@ export default {
   title: 'Components/RadioGroup',
   // Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls#annotation
   argTypes: {
-    // This will create an `args.variant` binding for your component 
+    // This will create an `args.variant` binding for your component
     orientation: {
       options: ['horizontal', 'vertical'],
       control: { type: 'radio' },
@@ -16,10 +16,10 @@ export default {
       },
       description: 'The preselected value item',
     },
-  }
+  },
 };
 
-const Template = (args) => `
+const Template = args => `
   <hs-header level="4">
     What is your favorite band of the 70's?
   </hs-header>

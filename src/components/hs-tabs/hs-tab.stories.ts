@@ -7,11 +7,10 @@ export default {
       control: { type: 'select' },
       description: 'Tab selected by default',
     },
-  }
+  },
 };
 
-
-const Template = (args) => `
+const Template = args => `
   <hs-tabs selected-index="${args.selectedIndex}">
     <hs-tab-list>
       <hs-tab>Episode 1</hs-tab>
